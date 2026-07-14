@@ -1,0 +1,5 @@
+1- select specific column
+2- select specific  rows
+( filter rows )
+3- combine multiple conditions
+ 
