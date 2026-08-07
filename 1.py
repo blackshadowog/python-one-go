@@ -1,30 +1,17 @@
-# 2-D vector class
-class Vector2D:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+try:
+    with open("1.txt",) as f:
+        print(f.read())
+except Exception as e:
+    print(e)
+try:
+    with open("2.txt",) as f:
+        print(f.read())
+except Exception as e:
+    print(e)
+try:
+    with open("3.txt",) as f:
+        print(f.read())
+except Exception as e:
+        print(e)
 
-    def display(self):
-        print(f"Vector2D: ({self.x}, {self.y})")
-
-
-
-# 3-D vector class (inherits from Vector2D)
-class Vector3D(Vector2D):
-    def __init__(self, x, y, z):
-        super().__init__(x, y)  # Call parent constructor
-        self.z = z
-
-    def display(self):
-        print(f"Vector3D: ({self.x}, {self.y}, {self.z})")
-
-
-
-# Example usage
-v2 = Vector2D(3, 4)
-v2.display()
-
-
-v3 = Vector3D(1, 2, 2)
-v3.display()
-
+print("thank you")
