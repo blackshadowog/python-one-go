@@ -1,9 +1,11 @@
-import pyjokes  
-import pyttsx3
+# Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
 
-engine = pyttsx3.init()
+# Return the array in the form [x1,y1,x2,y2,...,xn,yn].
 
-j = pyjokes.get_joke()
-print(j)
-engine.say(j)
-engine.runAndWait()
+class Solution:
+    def shuffle(self, nums, n):
+        result = []
+        for i in range(n):
+            result.append(nums[i])
+            result.append(nums[i + n])
+        return result

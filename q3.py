@@ -1,11 +1,13 @@
-import os
-
-# Specify the directory path (leave empty to list the current directory)
-directory_path = "/" 
-
-# List all files and folders in the specified directory
-contents = os.listdir(directory_path)
-
-print("Contents of the directory:")
-for item in contents:
-    print(item)
+# Given a binary array nums, return the maximum number of consecutive 1's in the array.
+class Solution:
+    def findMaxConsecutiveOnes(self, nums):
+        max_count = 0
+        current_count = 0
+        for num in nums:
+            if num == 1:
+                current_count += 1
+                max_count = max(max_count, current_count)
+            else:
+                current_count = 0
+        return max_count
+    
