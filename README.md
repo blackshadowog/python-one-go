@@ -1,28 +1,10 @@
-# 🐍 Python One Go
+# OpenCV Advanced 10
 
-> **A complete Python learning repository — from absolute beginner to advanced concepts, projects, and interview preparation.**
+Install:
+pip install opencv-python numpy
 
-## 📖 About
+Topics: image processing, HSV detection, contours, document scanning,
+face detection, motion detection, Hough lines, camera calibration,
+color tracking and real-time vision dashboard.
 
-**Python One Go** is a structured collection of Python resources designed to help learners master Python in a single repository.
-
-Whether you're just starting or preparing for technical interviews, this repository provides organized examples, exercises, mini projects, and practical implementations.
-
----
-
-## ✨ Features
-
-- 📚 Beginner to Advanced Python
-- 🧠 Practice Questions
-- 💻 Mini Projects
-- 🚀 Real-world Examples
-- 📂 Well Organized Chapters
-- 📝 Clean & Easy-to-understand Code
-- 🔥 Interview Preparation
-- ⚡ Regular Updates
-
----
-
-## 📁 Repository Structure
-
-author - Abhishek kumar tiwari
+Press Q to exit webcam programs.
