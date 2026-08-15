@@ -1,10 +1,13 @@
-# OpenCV Advanced 10
+# Python + Rust — 10 Code Examples
 
-Install:
-pip install opencv-python numpy
+This ZIP contains 10 Python examples plus a small Rust/PyO3 extension demo.
 
-Topics: image processing, HSV detection, contours, document scanning,
-face detection, motion detection, Hough lines, camera calibration,
-color tracking and real-time vision dashboard.
+## Run Python
+python 01_hello_world.py
 
-Press Q to exit webcam programs.
+## Build the Rust extension
+cd rust_demo
+pip install maturin
+maturin develop
+cd ..
+python 10_python_rust_bridge.py
