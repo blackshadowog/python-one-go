@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+
+<div class="stats">
+    <div class="stat"><b>{{ total }}</b><span>Total</span></div>
+    <div class="stat"><b>{{ pending }}</b><span>Pending</span></div>
+    <div class="stat"><b>{{ completed }}</b><span>Completed</span></div>
+</div>
+
+<div class="card">
+    <h2>Add New Task</h2>
+    <form method="post" action="{{ url_for('add_task') }}">
+        <input name="title" placeholder="Task title" required>
+        <textarea name="description" placeholder="Description"></textarea>
+        <button class="btn">Add Task</button>
+    </form>
+</div>
+
+<div class="tasks">
+{% for task in tasks %}
+    <div class="task {% if task['status'] == 'Completed' %}done{% endif %}">
+        <div>
+            <h3>{{ task["title"] }}</h3>
+            <p>{{ task["description"] }}</p>
+            <small>{{ task["status"] }}</small>
+        </div>
+        <div class="actions">
+            <a href="{{ url_for('toggle_task', task_id=task['id']) }}">
+                {{ "Undo" if task["status"] == "Completed" else "Complete" }}
+            </a>
+            <a class="danger" href="{{ url_for('delete_task', task_id=task['id']) }}">Delete</a>
+        </div>
+    </div>
+{% else %}
+    <div class="card"><p>No tasks yet. Add your first task above.</p></div>
+{% endfor %}
+</div>
+{% endblock %}

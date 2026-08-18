@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}TaskFlow{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Manage Tasks. Get Things Done.</h1>
+    <p>A simple Flask + SQLite task management application.</p>
+    <div>
+        <a class="btn" href="{{ url_for('login') }}">Login</a>
+        <a class="btn secondary" href="{{ url_for('register') }}">Create Account</a>
+    </div>
+</section>
+{% endblock %}
