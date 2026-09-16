@@ -11,3 +11,4 @@ pip install maturin
 maturin develop
 cd ..
 python 10_python_rust_bridge.py
+ author name - Abhishek Kumar tiwari 
