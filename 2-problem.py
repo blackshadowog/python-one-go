@@ -9,15 +9,9 @@ class Calculator:
 
     def square_root(self, num):
         return math.sqrt(num)
-    
-    @staticmethod
-    def greet():
-        print("good morning")
 
 # Example usage:
-
 a = Calculator()
-a.greet()
 
 num = 9
 print(f"Square of {num}: {a.square(num)}")
