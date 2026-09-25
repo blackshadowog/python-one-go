@@ -1,0 +1,31 @@
+/* Installable app prompt */
+.install-card {
+  position: fixed;
+  z-index: 80;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  max-width: min(430px, calc(100vw - 32px));
+  padding: 10px 11px;
+  background: #fffdf6;
+  border: 3px solid #1f3a30;
+  box-shadow: 6px 6px 0 #c57d5f;
+  color: #2f4a3f;
+  animation: installIn .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+.install-copy { display: grid; gap: 3px; min-width: 0; flex: 1; }
+.install-copy strong { font-family: "Fraunces", Georgia, serif; font-size: 15px; font-weight: 500; }
+.install-copy span { color: #7f877a; font-size: 10px; line-height: 1.35; }
+.install-now { display: inline-flex; align-items: center; gap: 5px; flex: none; padding: 8px 10px; border: 2px solid #1f3a30; background: #1f3a30; color: #fffaf0; font-size: 11px; font-weight: 700; }
+.install-now:hover { background: #c57d5f; border-color: #c57d5f; }
+.install-close { display: grid; place-items: center; width: 24px; height: 24px; flex: none; border: 0; background: transparent; color: #8d9486; }
+.install-close:hover { color: #b8452f; }
+.offline-app-hint { display: inline-flex; align-items: center; gap: 5px; color: #9aa191; font-size: 10px; }
+@keyframes installIn { from { opacity: 0; transform: translateY(18px) rotate(1deg); } to { opacity: 1; transform: none; } }
+@media (max-width: 580px) {
+  .install-card { right: 12px; bottom: 12px; left: 12px; max-width: none; }
+  .install-card > svg { width: 34px; height: 34px; }
+  .install-now { padding: 7px 8px; }
+}

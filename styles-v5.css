@@ -1,0 +1,112 @@
+/* Role-aware backend status, compact sidebar lock note, and playable Candy boosts. */
+.page-controls {
+  position: relative;
+  top: auto;
+  right: auto;
+  justify-content: flex-end;
+  margin: 0 0 18px;
+  min-height: 38px;
+}
+.page-topline { padding-right: 0; }
+.role-panel { padding-top: 10px; }
+.connection-chip, .backend-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.connection-chip {
+  padding: 9px 10px;
+  border: 1.5px solid #a1b59c;
+  background: #eaf1e6;
+  color: #4c7354;
+}
+.connection-chip.is-offline { border-color: #d7b18c; background: #f8ebdb; color: #986244; }
+.connection-chip.is-connecting { border-color: #d1c3a7; color: #796f59; }
+.backend-indicator {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 9px;
+  padding: 7px 10px;
+  border: 1px solid rgba(189,215,178,.7);
+  background: rgba(111,168,106,.17);
+  color: #d9f0d4;
+  cursor: pointer;
+  transition: background .18s;
+}
+.backend-indicator:hover { background: rgba(111,168,106,.32); }
+.backend-indicator.is-offline { border-color: rgba(233,190,146,.8); color: #ffe0ba; background: rgba(185,110,76,.25); }
+.backend-indicator.is-connecting { color: #e9e0c9; }
+.backend-indicator.is-connecting svg { animation: nm-spin 1.8s linear infinite; }
+@keyframes nm-spin { to { transform: rotate(360deg); } }
+.sidebar-lock {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 10px;
+  margin: 10px 2px 0;
+  border-left: 2px solid #d1b18e;
+  color: #b7c4ae;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.sidebar-lock svg { flex: none; margin-top: 2px; color: #dfb991; }
+
+.candy-boosted { max-width: 560px; }
+.candy-boosted .candy-board { max-width: 455px; }
+.candy-combo {
+  padding: 2px 6px;
+  background: #e9b65f;
+  border: 1px solid #92744b;
+  color: #614c30;
+  font-size: 10px;
+  font-weight: 800;
+  animation: candy-combo-pop .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes candy-combo-pop { from { transform: scale(.65) rotate(-12deg); } to { transform: scale(1) rotate(0); } }
+.candy-power-area { margin-top: 21px; border-top: 2px dashed #d7d0bc; padding-top: 13px; }
+.candy-power-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.candy-power-heading > span { display: inline-flex; align-items: center; gap: 7px; color: #315145; font-family: "Fraunces", Georgia, serif; font-size: 19px; }
+.candy-power-heading svg { color: #c58061; }
+.candy-power-heading small { color: #979989; font-size: 10px; letter-spacing: .05em; }
+.candy-power-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.candy-power {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  min-height: 92px;
+  padding: 9px 10px;
+  border: 2px solid #315145;
+  background: #fffaf0;
+  color: #345349;
+  text-align: left;
+  box-shadow: 3px 3px 0 #aab8a2;
+  transition: transform .16s, box-shadow .16s, background .16s;
+}
+.candy-power svg { color: #c38460; }
+.candy-power strong { font-family: "Fraunces", Georgia, serif; font-size: 12px; line-height: 1.1; }
+.candy-power small { color: #898e7d; font-size: 9px; line-height: 1.2; }
+.candy-power em { position: absolute; top: 6px; right: 6px; display: grid; place-items: center; min-width: 20px; height: 20px; border-radius: 50%; background: #315145; color: #fffaf0; font-size: 10px; font-weight: 800; font-style: normal; }
+.candy-power:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 3px 5px 0 #aab8a2; background: #f2f6e9; }
+.candy-power.is-armed { background: #fceac9; border-color: #b77751; box-shadow: 3px 3px 0 #b77751; transform: translateY(-2px); }
+.candy-power:disabled { opacity: .47; box-shadow: none; }
+.candy-power-help { min-height: 16px; margin: 11px 0 0; text-align: center; color: #a17b62; font-family: "Caveat", cursive; font-size: 19px; }
+.candy-tile.is-power-target { cursor: crosshair; }
+.candy-tile.is-power-target:hover { box-shadow: inset 0 0 0 3px #cf915f; background: #fff1d5; }
+
+@media (max-width: 780px) {
+  .page-controls { justify-content: flex-start; flex-wrap: wrap; }
+}
+@media (max-width: 550px) {
+  .connection-chip { order: 2; font-size: 8px; }
+  .candy-power-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .candy-power { min-height: 72px; padding: 8px 10px; }
+  .candy-power-heading small { display: none; }
+}

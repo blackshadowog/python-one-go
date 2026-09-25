@@ -1,0 +1,88 @@
+/* NeuroMind v6 — logo lockup, email sign-in, Candy Drush level map */
+
+/* ---------- logo ---------- */
+.sidebar-brand { display: flex; align-items: center; gap: 12px; }
+.sidebar-logo { flex: none; filter: drop-shadow(2px 3px 0 rgba(0,0,0,.28)); }
+.sidebar-brand-copy { font-family: "Fraunces", Georgia, serif; font-size: 25px; line-height: .84; letter-spacing: -.055em; }
+.sidebar-brand-copy strong { font-weight: 500; font-style: italic; }
+.sidebar-brand-copy i { color: #da9174; font-style: normal; }
+.login-eyebrow { display: inline-flex; align-items: center; gap: 9px; }
+.login-eyebrow svg { flex: none; }
+.mobile-brand svg { flex: none; }
+.logo-lockup { display: inline-flex; align-items: center; gap: 10px; }
+.logo-lockup-copy { display: grid; line-height: 1; }
+.logo-lockup-copy strong { font-family: "Fraunces", Georgia, serif; font-size: 22px; letter-spacing: -.05em; }
+.logo-lockup-copy em { font-style: italic; }
+.logo-lockup-copy i { color: #cc8367; font-style: normal; }
+.logo-lockup-copy small { color: #8d9486; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ---------- email sign-in ---------- */
+.login-mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+.login-mode-switch button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 9px 10px; background: #f3f0e4; border: 2px solid #16281f;
+  color: #4a5b48; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+.login-mode-switch button.is-active { background: #16281f; color: #f6efdc; }
+.login-email { display: grid; gap: 11px; }
+.login-email label {
+  display: grid; gap: 5px; color: #7c8578;
+  font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+}
+.login-email input[type="text"], .login-email input[type="email"], .login-email input[type="password"] {
+  padding: 10px 11px; background: #fff; border: 2px solid #16281f; color: #26473d;
+  font-family: "DM Sans", Arial, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none;
+}
+.login-email input:focus { outline: 2px solid var(--role, #c57d5f); outline-offset: 1px; }
+.remember-check { display: flex !important; align-items: center; gap: 9px; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 0 !important; text-transform: none !important; color: #45594d !important; }
+.remember-check input { width: 17px; height: 17px; accent-color: #16281f; }
+.login-notice {
+  display: flex; align-items: center; gap: 7px; margin: 0; padding: 8px 10px;
+  background: #f7ecd9; border-left: 3px solid #c89b52; color: #7d5f24; font-size: 11px;
+}
+.login-error svg, .login-notice svg { flex: none; }
+
+/* ---------- candy level map ---------- */
+.candy-map { max-width: 760px; }
+.candy-level-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+  gap: 9px; margin-top: 18px;
+}
+.candy-level {
+  display: grid; gap: 3px; justify-items: center; padding: 11px 8px 10px;
+  background: #fffdf6; border: 2px solid #1f3a30; box-shadow: 3px 3px 0 #d9d3c1;
+  color: #315145; text-align: center; transition: transform .16s, box-shadow .16s, background .16s;
+}
+.candy-level:hover:not(:disabled) { transform: translate(-1px, -2px); box-shadow: 4px 5px 0 #c9a184; background: #fdf6e9; }
+.candy-level.is-cleared { background: #f1f7ec; box-shadow: 3px 3px 0 #8da58d; }
+.candy-level.is-locked { background: #f0eee4; border-color: #b9b5a6; color: #9b9a8c; box-shadow: none; cursor: not-allowed; }
+.candy-level-number { font-family: "Fraunces", Georgia, serif; font-size: 25px; font-weight: 500; line-height: 1; letter-spacing: -.03em; }
+.candy-level-stars { display: inline-flex; gap: 2px; }
+.candy-level-name { font-size: 11px; font-weight: 700; letter-spacing: .01em; line-height: 1.2; }
+.candy-level small { color: #949b8c; font-size: 9px; letter-spacing: .04em; }
+.candy-level.is-locked .candy-level-number { color: #b3b1a3; }
+
+/* ---------- candy round extras ---------- */
+.candy-level-chip {
+  padding: 2px 7px; background: #1f3a30; color: #f6efdc;
+  font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+}
+.candy-wall {
+  border-radius: 5px;
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.16) 0 3px, transparent 3px 6px),
+    linear-gradient(160deg, #6d6a5d, #4a4841);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.18);
+}
+.candy-foot { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+.candy-result .candy-stars { display: inline-flex; gap: 6px; margin: 8px 0 2px; }
+.candy-result .result-score { font-family: "DM Sans", Arial, sans-serif; font-size: 13px; font-style: normal; }
+.candy-result-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; align-items: center; }
+
+@media (max-width: 620px) {
+  .candy-level-grid { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 7px; }
+  .candy-level { padding: 9px 6px; }
+  .candy-level-number { font-size: 21px; }
+  .login-mode-switch { grid-template-columns: 1fr; }
+}
